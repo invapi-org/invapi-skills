@@ -1,0 +1,25 @@
+{
+  "name": "invapi",
+  "description": "Skills for the Invapi e-invoicing API - extract invoices from PDFs/images, convert between formats (JSON, UBL, CII, XLSX, ZUGFeRD), and validate invoices.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Invapi",
+    "email": "support@invapi.org"
+  },
+  "repository": "https://github.com/invapi/invapi-skills",
+  "license": "MIT",
+  "keywords": [
+    "invoicing",
+    "e-invoicing",
+    "pdf",
+    "extraction",
+    "ubl",
+    "cii",
+    "xrechnung",
+    "zugferd",
+    "factur-x",
+    "en16931",
+    "validation",
+    "conversion"
+  ]
+}
