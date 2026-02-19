@@ -4,6 +4,7 @@
 #
 # Requires: INVAPI_API_KEY environment variable, requests library
 
+import mimetypes
 import os
 import sys
 
@@ -29,7 +30,7 @@ with open(file_path, "rb") as f:
     resp = requests.post(
         "https://api.invapi.org/api/v1/file/json",
         headers={"x-api-key": api_key},
-        files={"file": (os.path.basename(file_path), f)},
+        files={"file": (os.path.basename(file_path), f, mimetypes.guess_type(file_path)[0] or "application/octet-stream")},
     )
 
 resp.raise_for_status()

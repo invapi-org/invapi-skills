@@ -29,7 +29,7 @@ const invoiceData = fs.readFileSync(invoiceJson, "utf-8");
 const pdfData = fs.readFileSync(pdfFile);
 
 const form = new FormData();
-form.append("file", new Blob([pdfData]), path.basename(pdfFile));
+form.append("file", new Blob([pdfData], { type: "application/pdf" }), path.basename(pdfFile));
 form.append("invoice", invoiceData);
 
 fetch("https://api.invapi.org/api/v1/json/zugferd", {

@@ -32,7 +32,7 @@ with open(pdf_path, "rb") as f:
     resp = requests.post(
         "https://api.invapi.org/api/v1/json/zugferd",
         headers={"x-api-key": api_key},
-        files={"file": (os.path.basename(pdf_path), f)},
+        files={"file": (os.path.basename(pdf_path), f, "application/pdf")},
         data={"invoice": invoice_data},
     )
 

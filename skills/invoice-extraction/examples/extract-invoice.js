@@ -26,9 +26,20 @@ if (!fs.existsSync(file)) {
   process.exit(1);
 }
 
+const MIME_TYPES = {
+  ".pdf": "application/pdf",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
+  ".gif": "image/gif",
+};
+
 const data = fs.readFileSync(file);
+const ext = path.extname(file).toLowerCase();
+const mimeType = MIME_TYPES[ext] || "application/octet-stream";
 const form = new FormData();
-form.append("file", new Blob([data]), path.basename(file));
+form.append("file", new Blob([data], { type: mimeType }), path.basename(file));
 
 fetch("https://api.invapi.org/api/v1/file/json", {
   method: "POST",
