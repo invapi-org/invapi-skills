@@ -6,7 +6,7 @@
     "name": "Invapi",
     "email": "support@invapi.org"
   },
-  "repository": "https://github.com/invapi/invapi-skills",
+  "repository": "https://github.com/invapi-org/invapi-skills",
   "license": "MIT",
   "keywords": [
     "invoicing",
